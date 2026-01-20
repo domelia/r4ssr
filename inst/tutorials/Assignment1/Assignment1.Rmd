@@ -17,8 +17,6 @@ library(learnr)
 library(gradethis)
 library(tutorial.helpers)
 knitr::opts_chunk$set(echo = FALSE)
-source(system.file("R", "submission_functions.R", package="R2026"))
-
 ```
 
 ##
@@ -239,10 +237,3 @@ grade_code()
 ```{r download-answers, child = system.file("child_documents/download_answers.Rmd", package = "tutorial.helpers")}
 ```
 
-```{r submission-ui}
-submission_ui
-```
-
-```{r submission-server}
-submission_server()
-```

@@ -1,0 +1,100 @@
+---
+title: "Основные типы и структуры данных в R"
+output: 
+  learnr::tutorial:
+    language: ru.json
+runtime: shiny_prerendered
+
+---
+```{r setup-locale, include=FALSE}
+Sys.setenv(LANGUAGE = "ru_RU.UTF-8")
+Sys.setlocale("LC_ALL", "Russian")
+```
+
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+library(webexercises)
+library(tutorial.helpers)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##
+
+```{r info-section, child = system.file("child_documents/info_section.Rmd", package = "tutorial.helpers")}
+```
+
+## Самостоятельная работа 0
+
+**1. Каким языком является R?**
+
+```{r}
+opts_r <- c(
+   "компилируемым","процедурным",
+   answer = "интерпретируемым",
+   "структурным"
+)
+```
+
+`r longmcq(opts_r)`
+
+**2. Может ли R быть интегрирована с Hadoop для обработки больших данных?** `r torf(TRUE)`
+
+**3. На основе какого языка создан R?**
+
+```{r}
+opts_r <- c(
+   "Python","Oracle",
+   answer = "S",
+   "Java"
+)
+
+```
+
+`r longmcq(opts_r)`
+
+**4. **
+
+Напишите код, выполняющий простые арифметические действия. Наберите на клавиатуре любое математическое выражение, например, `1+1`. Чтобы выполнить данную команду, нажмите сочетание клавиш `Ctrl + Enter` или кнопку `Run`, которая находится в правом углу меню. Команда выполняется автоматически, сразу же.
+
+
+```{r ex1, exercise = TRUE}
+# Напишите свой код здесь
+
+```
+
+```{r ex1-solution}
+# without ordered ----
+grade<-c("low", "high", "middle", "high")
+grade <- factor(grade, levels=c("low", "middle", "high"))
+class(grade)
+
+# with ordered ----
+grade<-c("low", "high", "middle", "high")
+grade <- factor(grade, order=TRUE, levels=c("low", "middle", "high"))
+class(grade)
+```
+
+```{r ex1-code-check}
+grade_code()
+```
+
+Поэспериментируйте с R как с калькулятором, используя информацию об операторах, используемых для математических вычислений:
+
+```{r ex1, exercise = TRUE}
+# Напишите свой код здесь
+
+```
+
+3.  Напишите код, отображающий текстовое сообщение "Я люблю Барнаул!"
+
+```{r ex1, exercise = TRUE}
+# Напишите свой код здесь
+
+```
+
+
+```{r download-answers, child = system.file("child_documents/download_answers.Rmd", package = "tutorial.helpers")}
+```
+
