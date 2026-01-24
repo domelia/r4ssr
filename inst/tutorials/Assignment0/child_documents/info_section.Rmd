@@ -1,0 +1,21 @@
+## Представьтесь
+###
+
+```{r name}
+question_text(
+    "Фамилия, имя:",
+    answer("Введите здесь свою фамилию и имя", correct = TRUE),
+    allow_retry = TRUE,
+    try_again = "Edit Answer",
+    incorrect = NULL)
+```
+
+
+```{r ID}
+question_text(
+    "Группа:",
+    answer("Введите номер своей группы", correct = TRUE),
+    allow_retry = TRUE,
+    try_again = "Edit Answer",
+    incorrect = NULL)
+```

@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ##
 
-```{r info-section, child = system.file("child_documents/info_section.Rmd", package = "tutorial.helpers")}
+```{r info-section, child = "child_documents/info_section.Rmd"}
 ```
 
 ## Самостоятельная работа 1
@@ -234,6 +234,6 @@ grade_code()
 ```
 
 
-```{r download-answers, child = system.file("child_documents/download_answers.Rmd", package = "tutorial.helpers")}
+```{r download-answers, child ="child_documents/download_answers.Rmd"}
 ```
 

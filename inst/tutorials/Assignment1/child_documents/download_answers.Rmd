@@ -1,0 +1,23 @@
+## Сохранить ответы
+
+```{r minutes}
+question_numeric(
+	"Сколько по времени в минутах у Вас потребовало выполнение данного урока (например, 45)",
+	answer(NULL, correct = TRUE),
+	allow_retry = TRUE,
+	try_again = "Edit Answer",
+	incorrect = NULL,
+  min = 0,
+	max = 360,
+	step = 1)
+```
+
+###
+
+```{r context = "setup"}
+R2026::submission_ui
+```
+
+```{r context = "server"}
+R2026::submission_server()
+```
