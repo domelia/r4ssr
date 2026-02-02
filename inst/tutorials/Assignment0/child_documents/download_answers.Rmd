@@ -15,9 +15,9 @@ question_numeric(
 ###
 
 ```{r context = "setup"}
-R2026::submission_ui
+r4ssr::submission_ui
 ```
 
 ```{r context = "server"}
-R2026::submission_server()
+r4ssr::submission_server()
 ```
