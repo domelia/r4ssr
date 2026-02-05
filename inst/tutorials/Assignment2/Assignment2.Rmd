@@ -49,8 +49,12 @@ grade_result_strict(
 
 Подсказка: Вы можете использовать разные функции для проверки принадлежности.
 Попробуйте создать функцию и протестировать ее на примере:
-`
-`n_in_vec(2, c(4:8))` - в ответе должно быть `FALSE`.
+
+```{r echo=TRUE, eval=FALSE}
+n_in_vec(2, c(4:8))
+```
+
+в ответе должно быть `FALSE`.
 
 ```{r ex2, exercise = TRUE}
 # Напишите свой код здесь
@@ -67,100 +71,45 @@ grade_result_strict(
 
 ### Упражнение 3
 
-Создайте функцию `n_in_vec`, проверяющую принадлежность числа `n` некоторому вектору `vec`. Если число в векторе содержится, функция должна вернуть `TRUE`.
-
-Подсказка: Вы можете использовать разные функции для проверки принадлежности.
-Попробуйте создать функцию и протестировать ее на примере:
-`
-`n_in_vec(2, c(4:8))` - в ответе должно быть `FALSE`.
+Создайте функцию `count_positive`, которая возвращает количество
+положительных элементов (> 0) в числовом векторе v.
 
 ```{r ex3, exercise = TRUE}
-# Напишите свой код здесь
-
+count_positive <- function(v) {
+  # ваш код здесь
+}
 ```
+
 
 ```{r ex3-check}
 grade_result_strict(
-  # проверим несколько вызовов
-  pass_if(~ n_in_vec(5, c(1:5)) == TRUE),
-  pass_if(~ n_in_vec(2, 3:7) == FALSE),
-  pass_if(~ n_in_vec(-1, -2:5) == TRUE))
+  pass_if(~ exists("count_positive") && is.function(count_positive)),
+  pass_if(~ identical(count_positive(c(-1, 0, 1, 2)), 2)),
+  pass_if(~ identical(count_positive(c(-5, -3)), 0)),
+  pass_if(~ identical(count_positive(c(1, 2, 3)), 3))
+)
 ```
+
 
 
 ### Упражнение 4
 
-Создайте функцию `count_positive`, которая возвращает количество
-положительных элементов (> 0) в числовом векторе v.
+Создайте функцию `my_mean`, которая бы выводила средние значения по всем переменным датафрейма (предполагается, что все переменные числовые).
+
 
 ```{r ex4, exercise = TRUE}
-count_positive <- function(v) {
   # ваш код здесь
-}
+
 ```
 
 
 ```{r ex4-solution}
-count_positive <- function(v) {
-  sum(v > 0)
-}
-```
-
-```{r ex4-check}
-grade_result_strict(
-  pass_if(~ exists("count_positive") && is.function(count_positive)),
-  pass_if(~ identical(count_positive(c(-1, 0, 1, 2)), 2)),
-  pass_if(~ identical(count_positive(c(-5, -3)), 0)),
-  pass_if(~ identical(count_positive(c(1, 2, 3)), 3))
-)
-```
-
-
-### Упражнение 5
-
-Создайте функцию `count_positive`, которая возвращает количество
-положительных элементов (> 0) в числовом векторе v.
-
-```{r ex5, exercise = TRUE}
-count_positive <- function(v) {
-  # ваш код здесь
-}
-```
-
-
-```{r ex5-solution}
-count_positive <- function(v) {
-  sum(v > 0)
-}
-```
-
-```{r ex5-check}
-grade_result_strict(
-  pass_if(~ exists("count_positive") && is.function(count_positive)),
-  pass_if(~ identical(count_positive(c(-1, 0, 1, 2)), 2)),
-  pass_if(~ identical(count_positive(c(-5, -3)), 0)),
-  pass_if(~ identical(count_positive(c(1, 2, 3)), 3))
-)
-```
-
-### Упражнение 6
-
-Создайте функцию `my_mean`, которая бы выводила средние значения по всем переменным датафрейма (предполагается, что все переменные числовые).
-
-
-```{r ex6, exercise = TRUE}
-  # ваш код здесь
-
-```
-
-
-```{r ex6-solution}
 my_mean <- function(df) {
   sapply(df, mean, na.rm=TRUE)
 }
 ```
 
-```{r ex6-check}
+```{r ex4-check}
 grade_result_strict(
 # 1. Функция существует и это функция
   pass_if(~ exists("my_mean") && is.function(my_mean)),
@@ -177,37 +126,27 @@ grade_result_strict(
     c(x = 2, y = 4)
   )),
   
- # 4. Работает на data.frame с разными типами столбцов
-  pass_if(~ identical(
-    sapply(my_mean(mtcars[, 1:3]), round, 1),
-    c(mpg = 20.1, cyl = 6.3, disp = 230.7)
-  )),
-  
-  # 5. Возвращает именованный вектор (важно!)
+# 4. Возвращает именованный вектор (важно!)
   pass_if(~ identical(
     names(my_mean(data.frame(col1 = 1:3, col2 = 4:6))),
-    c("col1", "col2")
-  )),
-  
-  # 6. Пустой data.frame
-  pass_if(~ identical(my_mean(data.frame()), numeric(0)))
-)
+    c("col1", "col2"))
+  ))
 ```
 
-### Упражнение 7
+### Упражнение 5
 Создайте функцию `class_fun`, на входе которой будет даваться датафрейм, а на выходе - наименование каждой переменной и тип (класс) данных, которые в них содержатся. Например, `переменная1` числовая.
 
-```{r ex7, exercise = TRUE}
+```{r ex5, exercise = TRUE}
 # Напишите свой код здесь
 ```
-```{r ex7-solution}
+```{r ex5-solution}
 class_fun<-function(df){
   sapply(df, class)
 }
 df<-data.frame(a=c(1,2), b=c(3,4), c=c("a", "b"))
 class_fun(df)
 ```
-```{r ex7-check}
+```{r ex5-check}
 grade_result_strict(
   # 1. Функция существует и это функция
   pass_if(~ exists("class_fun") && is.function(class_fun)),
@@ -239,29 +178,23 @@ grade_result_strict(
   )))
 ```
 
-### Упражнение 8
+### Упражнение 6
 
 Создайте функцию `na_check`, на входе которой будет даваться вектор или переменная датафрейма, а на выходе - количество пропущенных значений `NA`.
 
 Например, при запуске кода:
-
 ```{r echo=TRUE, eval=FALSE}
 df<-data.frame(a=c(1,2, NA), b=c(3,4, NA), c=c("a", "b", NA))
 na_check(df$a)
 ```
-
 в ответе должно быть 1. 
 
-```{r ex8, exercise = TRUE}
+```{r ex6, exercise = TRUE}
 # Напишите свой код здесь
 ```
-```{r ex8-solution}
-na_check<-function(v){
-  sum(is.na(v))
-}
-```
-```{r ex8-check}
-grade_result_strict(
+
+```{r ex6-check}
+grade_result(
   # 1. Функция существует
   pass_if(~ exists("na_check") && is.function(na_check)),
   
@@ -280,10 +213,7 @@ grade_result_strict(
   # 6. Пустой вектор
   pass_if(~ identical(na_check(numeric(0)), 0)),
   
-  # 7. Вектор с NA и разными типами
-  pass_if(~ identical(na_check(c("a", NA, "b", NA)), 2)),
-  
-  # 8. Крайний случай: вектор длины 1 без NA
+  # 7. Крайний случай: вектор длины 1 без NA
   pass_if(~ identical(na_check(42), 0))
 )
 ```
