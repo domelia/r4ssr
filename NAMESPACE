@@ -2,5 +2,3 @@
 
 export(submission_server)
 export(submission_ui)
-import(tutorial.helpers)
-import(learnr)
