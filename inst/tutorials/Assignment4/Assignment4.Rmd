@@ -54,6 +54,12 @@ haven::read_sav("IND_OSN.sav")
 
 ```{r data, echo=FALSE}
 df<-haven::read_sav("data/IND_OSN.sav")
+df$H01_01 <-sjlabelled::as_label(df$H01_01)
+df$I07_01<-sjlabelled::as_label(df$I07_01)
+df$FED_OKR<-sjlabelled::as_label(df$FED_OKR)
+df$SEKT<-sjlabelled::as_label(df$SEKT)
+
+
 ```
 
 ```{r eval = FALSE}
