@@ -405,9 +405,9 @@ data-pipe="|&gt;">
 <h3></h3>
 <p>Хотя в рамках лекции мы обсуждали, что библиотека
 <code>ggplot2</code> не поддерживает пайпинг внутри кода, создающего
-график, ничто не мешает нам с помощью пайпа присоединить функции ggplot2
-к самим данным. Такой способ представления аналогичен конструкции
-`ggplot(data = penguins).</p>
+график, но ничто не мешает нам с помощью пайпа присоединить функции
+ggplot2 к самим данным. Такой способ представления аналогичен
+конструкции `ggplot(data = penguins).</p>
 </div>
 <div id="section-section-5" class="section level3">
 <h3></h3>
@@ -427,40 +427,26 @@ data-pipe="|&gt;">
 “эстетика” по оси <code>x</code> переменную
 <code>flipper_length_mm</code>, по оси<code>y</code> - переменную
 <code>body_mass_g</code>, а затем запустите код.</p>
-<pre><code>## function (check_env) 
-## {
-##     if (is.list(check_env)) {
-##         check_env &lt;- list2env(check_env)
-##     }
-##     user_code &lt;- check_env$.user_code
-##     if (is.null(user_code)) {
-##         return(legacy_graded(correct = FALSE, message = &quot;I didn&#39;t receive your code. Did you write any?&quot;))
-##     }
-##     solution_code_all &lt;- check_env$.solution_code_all
-##     if (is.null(solution_code_all) || length(str2expression(solution_code_all)) == 
-##         0) {
-##         solution_code_all &lt;- solutions_prepare(check_env$.solution_code)
-##     }
-##     if (is.null(solution_code_all) || length(str2expression(solution_code_all)) == 
-##         0) {
-##         return(legacy_graded(correct = FALSE, message = &quot;No exercise solution provided. Defaulting to _incorrect_.&quot;))
-##     }
-##     message &lt;- code_feedback(user_code = user_code, solution_code = solution_code_all, 
-##         user_env = check_env$.envir_result %||% check_env, solution_env = check_env$.envir_solution %||% 
-##             check_env, allow_partial_matching = allow_partial_matching)
-##     if (is.null(message)) {
-##         return(legacy_graded(correct = TRUE, message = glue_message(glue_correct %||% 
-##             gradethis_legacy_options$gradethis.glue_correct, 
-##             .is_correct = TRUE, .message = NULL, .correct = correct, 
-##             .user_code = user_code)))
-##     }
-##     message &lt;- glue_message(glue_incorrect %||% gradethis_legacy_options$gradethis.glue_incorrect, 
-##         .is_correct = FALSE, .message = message, .incorrect = incorrect, 
-##         .user_code = user_code)
-##     legacy_graded(correct = FALSE, message = message)
-## }
-## &lt;bytecode: 0x000001529b08a190&gt;
-## &lt;environment: 0x000001529b086f90&gt;</code></pre>
+<div class="tutorial-exercise" data-label="first-steps-5"
+data-completion="1" data-diagnostics="1" data-startover="1"
+data-lines="0" data-pipe="|&gt;">
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="first-steps-5-hint-1"
+data-completion="1" data-diagnostics="1" data-startover="1"
+data-lines="0" data-pipe="|&gt;">
+<pre class="text"><code>penguins |&gt;
+  ggplot(mapping = aes(x = ..., 
+                       y = ...))</code></pre>
+</div>
+<div class="tutorial-exercise-support"
+data-label="first-steps-5-solution" data-completion="1"
+data-diagnostics="1" data-startover="1" data-lines="0"
+data-pipe="|&gt;">
+<pre class="text"><code>penguins |&gt;
+  ggplot(mapping = aes(x = flipper_length_mm, 
+                       y = body_mass_g))</code></pre>
+</div>
 </div>
 <div id="section-section-6" class="section level3">
 <h3></h3>
@@ -547,8 +533,8 @@ data-pipe="|&gt;">
 </div>
 <div id="section-section-8" class="section level3">
 <h3></h3>
-<p>Функция эстетики <code>aes()</code>, имеет не только параметры
-<code>x</code> и <code>y</code>. но и такие как <code>color</code>
+<p>Функция эстетики <code>aes()</code> имеет не только параметры
+<code>x</code> и <code>y</code>, но и такие как <code>color</code>
 (цвет), <code>shape</code> (форма) и <code>size</code> (размер). Мы
 можем добавить их таким же способом, как мы добавляли параметры
 <code>x</code> и <code>y</code>.</p>
@@ -639,7 +625,7 @@ data-lines="0" data-pipe="|&gt;">
                        y = body_mass_g, 
                        color = species)) +
   geom_point() +
-  geom_smooth(...)</code></pre>
+  geom_smooth(method=...)</code></pre>
 </div>
 <div class="tutorial-exercise-support"
 data-label="first-steps-9-solution" data-completion="1"
@@ -649,7 +635,7 @@ data-pipe="|&gt;">
   drop_na() |&gt;
   ggplot(mapping = aes(x = flipper_length_mm, 
                        y = body_mass_g,
-                       color = species)) +
+                       color=species)) +
     geom_point() +
     geom_smooth(method = &quot;lm&quot;) </code></pre>
 </div>
@@ -660,15 +646,22 @@ data-pipe="|&gt;">
 <strong>m</strong>odel, то есть R старается найти прямую, которая бы
 лучшим способом воспроизводила бы взаимосвязи между данными.</p>
 </div>
-<div id="section-exercise-10" class="section level3">
-<h3>Exercise 10</h3>
-<p>В настощее время наш график показывает одну линию для всех данных,
-вместо того, чтобы показать отдельные линии для каждого вида пингвина.
-Чтобы создать такой эффект, нужно удалить настройки цвета -
-<code>color</code> внутри функции<code>ggplot()</code> и добавить их в
-слой <code>geom_point()</code>:
-<code>geom_point(mapping = aes(color = species))</code>. Скипируйте код
-из прерыдущего упражнения и поменяйте настройки цвета</p>
+<div id="section-section-11" class="section level3">
+<h3></h3>
+<p>Нужно запомнить, что <strong>ggplot2</strong>, когда настройки
+отображения (aesthetic mappings) определены глобально в основной функции
+<code>ggplot</code>, они наследуются всеми последующими слоями. В то же
+время, каждая функция в <strong>ggplot2</strong> также принимает
+“эстетические” аргументы, что позволяет вносить изменения на локальном
+уровне и изменять глобальные настройки.</p>
+</div>
+<div id="section-упражнение-10" class="section level3">
+<h3>Упражнение 10</h3>
+<p>Не все люди люди воспринимают цвета одинаково, поэтому, чтобы усилить
+различия по виду, кроме цвета мы может добавить еще один параметр -
+форму (<code>shape</code>) в слое <code>geom_point()</code>. Измените
+код так, чтобы вид был представлен не только цветом, но и точками разной
+формы.</p>
 <div class="tutorial-exercise" data-label="first-steps-10"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -685,59 +678,11 @@ data-pipe="|&gt;">
   drop_na() |&gt;
   ggplot(mapping = aes(x = flipper_length_mm, 
                        y = body_mass_g)) +
-  geom_point(mapping = ...) +
-  geom_smooth(method = &quot;lm&quot;, formula = y ~ x)</code></pre>
-</div>
-<div class="tutorial-exercise-support"
-data-label="first-steps-10-solution" data-completion="1"
-data-diagnostics="1" data-startover="1" data-lines="0"
-data-pipe="|&gt;">
-<pre class="text"><code>penguins |&gt;
-  drop_na() |&gt;
-  ggplot(mapping = aes(x = flipper_length_mm, 
-                       y = body_mass_g)) +
-    geom_point(mapping = aes(color = species, 
-                             shape = species)) +
-    geom_smooth(method = &quot;lm&quot;, formula = y ~ x) </code></pre>
-</div>
-</div>
-<div id="section-section-11" class="section level3">
-<h3></h3>
-<p>Нужно запомнить, что <strong>ggplot2</strong>, когда настройки
-отображения (aesthetic mappings) определены глобально в основной функции
-<code>ggplot</code>, они наследуются всеми последующими слоями. В то же
-время, каждая функция в <strong>ggplot2</strong> также принимает
-“эстетические” аргументы, что позволяет вносить изменения на локальном
-уровне и изменять глобальные настройки.</p>
-</div>
-<div id="section-упражнение-11" class="section level3">
-<h3>Упражнение 11</h3>
-<p>Не все люди люди воспринимают цвета одинаково, поэтому, чтобы усилить
-различия по виду, кроме цвета мы может добавить еще один параметр -
-форму (<code>shape</code>) в слое <code>geom_point()</code>. Измените
-код так, чтобы вид был представлен не только цветом, но и точками разной
-формы.</p>
-<div class="tutorial-exercise" data-label="first-steps-11"
-data-completion="1" data-diagnostics="1" data-startover="1"
-data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
-</div>
-<button onclick="transfer_code(this)">
-Скопировать код
-</button>
-<div class="tutorial-exercise-support"
-data-label="first-steps-11-hint-1" data-completion="1"
-data-diagnostics="1" data-startover="1" data-lines="0"
-data-pipe="|&gt;">
-<pre class="text"><code>penguins |&gt;
-  drop_na() |&gt;
-  ggplot(mapping = aes(x = flipper_length_mm, 
-                       y = body_mass_g)) +
   geom_point(mapping = aes(color = species, ... = species)) +
   geom_smooth(method = &quot;lm&quot;, formula = y ~ x)</code></pre>
 </div>
 <div class="tutorial-exercise-support"
-data-label="first-steps-11-solution" data-completion="1"
+data-label="first-steps-10-solution" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>penguins |&gt;
@@ -756,8 +701,8 @@ data-pipe="|&gt;">
 полезно для создания уникальных визуализаций или для включения каких-то
 определенных символов или логотипов.</p>
 </div>
-<div id="section-упражнение-12" class="section level3">
-<h3>Упражнение 12</h3>
+<div id="section-упражнение-11" class="section level3">
+<h3>Упражнение 11</h3>
 <p>Раз мы уже добавили данные, давайте добавим заголовок, подзаголовок,
 метки осей и другие настройки оформления. За это отвечает слой
 <code>labs()</code>. Он принимает такие аргументы, как <code>x</code>,
@@ -776,7 +721,7 @@ data-pipe="|&gt;">
 <code>"Биометрические измерения для видов Адели, Чинстрап и Генту"</code>,
 в параметре <code>x</code> установите <code>"Длина ласта (мм)"</code>, а
 в <code>y</code> - <code>"Масса тела (г)"</code></p>
-<div class="tutorial-exercise" data-label="first-steps-12"
+<div class="tutorial-exercise" data-label="first-steps-11"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
@@ -785,7 +730,7 @@ data-lines="0" data-pipe="|&gt;">
 Скопировать код
 </button>
 <div class="tutorial-exercise-support"
-data-label="first-steps-12-hint-1" data-completion="1"
+data-label="first-steps-11-hint-1" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>penguins |&gt;
@@ -800,7 +745,7 @@ data-pipe="|&gt;">
        y = ...)</code></pre>
 </div>
 <div class="tutorial-exercise-support"
-data-label="first-steps-12-solution" data-completion="1"
+data-label="first-steps-11-solution" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>penguins |&gt;
@@ -829,13 +774,75 @@ data-pipe="|&gt;">
 затрагивая настройки других. Важно выбрать ту функцию, которая
 соответствует текущей задаче.</p>
 </div>
-<div id="section-упражнение-13" class="section level3">
-<h3>Упражнение 13</h3>
+<div id="section-упражнение-12" class="section level3">
+<h3>Упражнение 12</h3>
 <p>Мы практически воспроизвели график, который мы видели в самом начале.
 Осталось только несколько моментов. Чтобы поменять обозначение легенды,
 нужно установить в настройках меток параметры <code>color</code> и
 <code>shape</code> равными <code>"Виды"</code> (обязательно в
 кавычках).</p>
+<div class="tutorial-exercise" data-label="first-steps-12"
+data-completion="1" data-diagnostics="1" data-startover="1"
+data-lines="0" data-pipe="|&gt;">
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+<button onclick="transfer_code(this)">
+Скопировать код
+</button>
+<div class="tutorial-exercise-support"
+data-label="first-steps-12-hint-1" data-completion="1"
+data-diagnostics="1" data-startover="1" data-lines="0"
+data-pipe="|&gt;">
+<pre class="text"><code>penguins |&gt;
+  drop_na() |&gt;
+  ggplot(mapping = aes(x = flipper_length_mm, 
+                       y = body_mass_g)) +
+  geom_point(mapping = aes(color = species, ... = species)) +
+  geom_smooth(method = &quot;lm&quot;, formula = y ~ x) +
+    labs( title = &quot;Масса тела и длина ласт&quot;,
+          subtitle = &quot;Биометрические измерения для видов Адели, Чинстрап и Генту&quot;,
+          x = &quot;Длина ласта (мм)&quot;, 
+          y = &quot;Масса тела (г)&quot;,
+          color = ...,
+          shape = ...)</code></pre>
+</div>
+<div class="tutorial-exercise-support"
+data-label="first-steps-12-solution" data-completion="1"
+data-diagnostics="1" data-startover="1" data-lines="0"
+data-pipe="|&gt;">
+<pre class="text"><code>penguins |&gt;
+  drop_na() |&gt;
+  ggplot(mapping = aes(x = flipper_length_mm, 
+                       y = body_mass_g)) +
+    geom_point(mapping = aes(color = species, 
+                             shape = species)) +
+    geom_smooth(method = &quot;lm&quot;, formula = y ~ x) +
+    labs( title = &quot;Масса тела и длина ласт&quot;,
+          subtitle = &quot;Биометрические измерения для видов Адели, Чинстрап и Генту&quot;,
+          x = &quot;Длина ласта (мм)&quot;, 
+          y = &quot;Масса тела (г)&quot;,
+         color = &quot;Виды&quot;, 
+         shape = &quot;Виды&quot;)</code></pre>
+</div>
+<p>Напомним, что наш график должен выглядеть вот так:</p>
+<p><img src="Assignment5_files/figure-html/unnamed-chunk-5-1.png" alt="" width="90%" /></p>
+</div>
+<div id="section-упражнение-13" class="section level3">
+<h3>Упражнение 13</h3>
+<p>Единственное, что мы не исправили - это тема. Кроме не очень красивой
+серой темы, которая устанавливается по умолчанию, в <code>ggplot2</code>
+есть множество других встроенных тем, например:</p>
+<ul>
+<li>theme_minimal() # Тема с минимальными настройками</li>
+<li>theme_bw() # Черно-белая</li>
+<li>theme_classic() # Классическая тема</li>
+</ul>
+<p>Мы пойдем чуть дальше и установим тему из расширения
+<code>ggthemes</code>, которая имитирует стиль журнала «Экономист» -
+theme_economist() и цветовую палитру из data viz программы Tableau.</p>
+<p>Скопируйте код из предыдущего блока и добавьте через знак
+<code>+</code> <code>theme_economist()</code> и
+<code>scale_color_tableau()</code>:</p>
 <div class="tutorial-exercise" data-label="first-steps-13"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -858,75 +865,13 @@ data-pipe="|&gt;">
           subtitle = &quot;Биометрические измерения для видов Адели, Чинстрап и Генту&quot;,
           x = &quot;Длина ласта (мм)&quot;, 
           y = &quot;Масса тела (г)&quot;,
-          color = ...,
-          shape = ...)</code></pre>
-</div>
-<div class="tutorial-exercise-support"
-data-label="first-steps-13-solution" data-completion="1"
-data-diagnostics="1" data-startover="1" data-lines="0"
-data-pipe="|&gt;">
-<pre class="text"><code>penguins |&gt;
-  drop_na() |&gt;
-  ggplot(mapping = aes(x = flipper_length_mm, 
-                       y = body_mass_g)) +
-    geom_point(mapping = aes(color = species, 
-                             shape = species)) +
-    geom_smooth(method = &quot;lm&quot;, formula = y ~ x) +
-    labs( title = &quot;Масса тела и длина ласт&quot;,
-          subtitle = &quot;Биометрические измерения для видов Адели, Чинстрап и Генту&quot;,
-          x = &quot;Длина ласта (мм)&quot;, 
-          y = &quot;Масса тела (г)&quot;,
-         color = &quot;Виды&quot;, 
-         shape = &quot;Виды&quot;)</code></pre>
-</div>
-<p>Напомним, что наш график должен выглядеть вот так:</p>
-<p><img src="Assignment5_files/figure-html/unnamed-chunk-5-1.png" alt="" width="90%" /></p>
-</div>
-<div id="section-упражнение-14" class="section level3">
-<h3>Упражнение 14</h3>
-<p>Единственное, что мы не исправили - это тема. Кроме не очень красивой
-серой темы, которая устанавливается по умолчанию, в <code>ggplot2</code>
-есть множество других встроенных тем, например:</p>
-<ul>
-<li>theme_minimal() # Тема с минимальными настройками</li>
-<li>theme_bw() # Черно-белая</li>
-<li>theme_classic() # Классическая тема</li>
-</ul>
-<p>Мы пойдем чуть дальше и установим тему из расширения
-<code>ggthemes</code>, которая имитирует стиль журнала «Экономист» -
-theme_economist() и цветовую палитру из data viz программы Tableau.</p>
-<p>Скопируйте код из предыдущего блока и добавьте через знак
-<code>+</code> <code>theme_economist()</code> и
-<code>scale_color_tableau()</code>:</p>
-<div class="tutorial-exercise" data-label="first-steps-14"
-data-completion="1" data-diagnostics="1" data-startover="1"
-data-lines="0" data-pipe="|&gt;">
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
-</div>
-<button onclick="transfer_code(this)">
-Скопировать код
-</button>
-<div class="tutorial-exercise-support"
-data-label="first-steps-14-hint-1" data-completion="1"
-data-diagnostics="1" data-startover="1" data-lines="0"
-data-pipe="|&gt;">
-<pre class="text"><code>penguins |&gt;
-  drop_na() |&gt;
-  ggplot(mapping = aes(x = flipper_length_mm, 
-                       y = body_mass_g)) +
-  geom_point(mapping = aes(color = species, ... = species)) +
-  geom_smooth(method = &quot;lm&quot;, formula = y ~ x) +
-    labs( title = &quot;Масса тела и длина ласт&quot;,
-          subtitle = &quot;Биометрические измерения для видов Адели, Чинстрап и Генту&quot;,
-          x = &quot;Длина ласта (мм)&quot;, 
-          y = &quot;Масса тела (г)&quot;,
          color = &quot;Виды&quot;, 
          shape = &quot;Виды&quot;)+
          theme...+
          scale...</code></pre>
 </div>
 <div class="tutorial-exercise-support"
-data-label="first-steps-14-solution" data-completion="1"
+data-label="first-steps-13-solution" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>penguins |&gt;
@@ -1235,8 +1180,8 @@ data-pipe="|&gt;">
 ##         .user_code = user_code)
 ##     legacy_graded(correct = FALSE, message = message)
 ## }
-## &lt;bytecode: 0x000001529b08a190&gt;
-## &lt;environment: 0x00000152a23ab770&gt;</code></pre>
+## &lt;bytecode: 0x000002190426ce38&gt;
+## &lt;environment: 0x000002190426dd28&gt;</code></pre>
 </div>
 <div id="section-section-22" class="section level3">
 <h3></h3>
@@ -1675,7 +1620,7 @@ observeEvent(input$js_to_server, {
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "name", question = structure("Фамилия, имя:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_5eb1822", 
+"character")), answers = list(structure(list(id = "lnr_ans_7e8cc2c", 
     option = "Введите здесь свою фамилию и имя", value = "Введите здесь свою фамилию и имя", 
     label = structure("Введите здесь свою фамилию и имя", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1685,14 +1630,14 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "name-answer", 
     question = "name"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 889009741.586023, options = list(
+    allow_retry = TRUE, seed = 452040164.789502, options = list(
         placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "ID", question = structure("Группа:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f917493", 
+"character")), answers = list(structure(list(id = "lnr_ans_d2728af", 
     option = "Введите номер своей группы", value = "Введите номер своей группы", 
     label = structure("Введите номер своей группы", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1702,7 +1647,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "ID-answer", question = "ID"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1667936673.22331, options = list(placeholder = "Enter answer here...", 
+    seed = 1775422396.17325, options = list(placeholder = "Enter answer here...", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
@@ -1885,6 +1830,51 @@ learnr:::store_exercise_cache(structure(list(label = "first-steps-4", global_set
 
 
 <script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-first-steps-5-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-first-steps-5-code-editor`)), session)
+output$`tutorial-exercise-first-steps-5-output` <- renderUI({
+  `tutorial-exercise-first-steps-5-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "first-steps-5", global_setup = structure(c("library(learnr)", 
+"library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
+"library(knitr)", "library(palmerpenguins)", "library(ggthemes) ", 
+"", "knitr::opts_chunk$set(echo=FALSE)", "knitr::opts_chunk$set(out.width = '90%')"
+), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "first-steps-5", code = "\n", 
+        opts = list(label = "\"first-steps-5\"", exercise = "TRUE"), 
+        engine = "r")), code_check = structure("grade_code()", chunk_opts = list(
+        label = "first-steps-5-code-check")), error_check = NULL, 
+    check = NULL, solution = structure(c("penguins |>", "  ggplot(mapping = aes(x = flipper_length_mm, ", 
+    "                       y = body_mass_g))"), chunk_opts = list(
+        label = "first-steps-5-solution", include = FALSE)), 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Assignment5_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Assignment5_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 6.5, fig.height = 4, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = "90%", out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (label = NULL, solution_code = NULL, user_code = NULL, \n    check_code = NULL, envir_result = NULL, evaluate_result = NULL, \n    envir_prep = NULL, last_value = NULL, stage = NULL, ..., \n    solution_eval_fn = NULL) \n{\n    (utils::getFromNamespace(\"check_exercise\", \"gradethis\"))(label = label, \n        solution_code = solution_code, user_code = user_code, \n        check_code = check_code, envir_result = envir_result, \n        evaluate_result = evaluate_result, envir_prep = envir_prep, \n        last_value = last_value, stage = stage, ...)\n}", 
+        exercise.error.check.code = "gradethis_error_checker()", 
+        label = "first-steps-5", exercise = TRUE, code = c("", 
+        ""), out.width.px = "90%", out.height.px = 384, params.src = "first-steps-5, exercise = TRUE", 
+        fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
+    version = "4"), class = c("r", "tutorial_exercise")))
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
 `tutorial-exercise-first-steps-6-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-first-steps-6-code-editor`)), session)
 output$`tutorial-exercise-first-steps-6-output` <- renderUI({
   `tutorial-exercise-first-steps-6-result`()
@@ -2039,7 +2029,7 @@ learnr:::store_exercise_cache(structure(list(label = "first-steps-9", global_set
         label = "first-steps-9-code-check")), error_check = NULL, 
     check = NULL, solution = structure(c("penguins |>", "  drop_na() |>", 
     "  ggplot(mapping = aes(x = flipper_length_mm, ", "                       y = body_mass_g,", 
-    "                       color = species)) +", "    geom_point() +", 
+    "                       color=species)) +", "    geom_point() +", 
     "    geom_smooth(method = \"lm\") "), chunk_opts = list(label = "first-steps-9-solution", 
         include = FALSE)), tests = NULL, options = list(eval = FALSE, 
         echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
@@ -2133,8 +2123,10 @@ learnr:::store_exercise_cache(structure(list(label = "first-steps-11", global_se
     check = NULL, solution = structure(c("penguins |>", "  drop_na() |>", 
     "  ggplot(mapping = aes(x = flipper_length_mm, ", "                       y = body_mass_g)) +", 
     "    geom_point(mapping = aes(color = species, ", "                             shape = species)) +", 
-    "    geom_smooth(method = \"lm\", formula = y ~ x) "), chunk_opts = list(
-        label = "first-steps-11-solution", include = FALSE)), 
+    "    geom_smooth(method = \"lm\", formula = y ~ x) +", "    labs( title = \"Масса тела и длина ласт\",", 
+    "          subtitle = \"Биометрические измерения для видов Адели, Чинстрап и Генту\",", 
+    "          x = \"Длина ласта (мм)\", ", "          y = \"Масса тела (г)\")"
+    ), chunk_opts = list(label = "first-steps-11-solution", include = FALSE)), 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
@@ -2182,8 +2174,9 @@ learnr:::store_exercise_cache(structure(list(label = "first-steps-12", global_se
     "    geom_point(mapping = aes(color = species, ", "                             shape = species)) +", 
     "    geom_smooth(method = \"lm\", formula = y ~ x) +", "    labs( title = \"Масса тела и длина ласт\",", 
     "          subtitle = \"Биометрические измерения для видов Адели, Чинстрап и Генту\",", 
-    "          x = \"Длина ласта (мм)\", ", "          y = \"Масса тела (г)\")"
-    ), chunk_opts = list(label = "first-steps-12-solution", include = FALSE)), 
+    "          x = \"Длина ласта (мм)\", ", "          y = \"Масса тела (г)\",", 
+    "         color = \"Виды\", ", "         shape = \"Виды\")"
+    ), chunk_opts = list(label = "first-steps-12-solution")), 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
@@ -2232,8 +2225,9 @@ learnr:::store_exercise_cache(structure(list(label = "first-steps-13", global_se
     "    geom_smooth(method = \"lm\", formula = y ~ x) +", "    labs( title = \"Масса тела и длина ласт\",", 
     "          subtitle = \"Биометрические измерения для видов Адели, Чинстрап и Генту\",", 
     "          x = \"Длина ласта (мм)\", ", "          y = \"Масса тела (г)\",", 
-    "         color = \"Виды\", ", "         shape = \"Виды\")"
-    ), chunk_opts = list(label = "first-steps-13-solution")), 
+    "         color = \"Виды\", ", "         shape = \"Виды\")+", 
+    "     theme_economist()+", "  scale_color_tableau()"), chunk_opts = list(
+        label = "first-steps-13-solution", include = FALSE)), 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
@@ -2254,57 +2248,6 @@ learnr:::store_exercise_cache(structure(list(label = "first-steps-13", global_se
         exercise.error.check.code = "gradethis_error_checker()", 
         label = "first-steps-13", exercise = TRUE, code = "", 
         out.width.px = "90%", out.height.px = 384, params.src = "first-steps-13, exercise = TRUE", 
-        fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
-    version = "4"), class = c("r", "tutorial_exercise")))
-</script>
-
-
-<script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-first-steps-14-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-first-steps-14-code-editor`)), session)
-output$`tutorial-exercise-first-steps-14-output` <- renderUI({
-  `tutorial-exercise-first-steps-14-result`()
-})
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache(structure(list(label = "first-steps-14", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(knitr)", "library(palmerpenguins)", "library(ggthemes) ", 
-"", "knitr::opts_chunk$set(echo=FALSE)", "knitr::opts_chunk$set(out.width = '90%')"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "first-steps-14", code = "", opts = list(
-        label = "\"first-steps-14\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code()", chunk_opts = list(
-        label = "first-steps-14-code-check")), error_check = NULL, 
-    check = NULL, solution = structure(c("penguins |>", "  drop_na() |>", 
-    "  ggplot(mapping = aes(x = flipper_length_mm, ", "                       y = body_mass_g)) +", 
-    "    geom_point(mapping = aes(color = species, ", "                             shape = species)) +", 
-    "    geom_smooth(method = \"lm\", formula = y ~ x) +", "    labs( title = \"Масса тела и длина ласт\",", 
-    "          subtitle = \"Биометрические измерения для видов Адели, Чинстрап и Генту\",", 
-    "          x = \"Длина ласта (мм)\", ", "          y = \"Масса тела (г)\",", 
-    "         color = \"Виды\", ", "         shape = \"Виды\")+", 
-    "     theme_economist()+", "  scale_color_tableau()"), chunk_opts = list(
-        label = "first-steps-14-solution", include = FALSE)), 
-    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
-        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
-        comment = NA, highlight = FALSE, size = "normalsize", 
-        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
-        cache.path = "Assignment5_cache/html/", cache.vars = NULL, 
-        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
-        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
-        fig.align = "default", fig.path = "Assignment5_files/figure-html/", 
-        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
-        fig.width = 6.5, fig.height = 4, fig.env = "figure", 
-        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
-        fig.pos = "", out.width = "90%", out.height = NULL, out.extra = NULL, 
-        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
-        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (label = NULL, solution_code = NULL, user_code = NULL, \n    check_code = NULL, envir_result = NULL, evaluate_result = NULL, \n    envir_prep = NULL, last_value = NULL, stage = NULL, ..., \n    solution_eval_fn = NULL) \n{\n    (utils::getFromNamespace(\"check_exercise\", \"gradethis\"))(label = label, \n        solution_code = solution_code, user_code = user_code, \n        check_code = check_code, envir_result = envir_result, \n        evaluate_result = evaluate_result, envir_prep = envir_prep, \n        last_value = last_value, stage = stage, ...)\n}", 
-        exercise.error.check.code = "gradethis_error_checker()", 
-        label = "first-steps-14", exercise = TRUE, code = "", 
-        out.width.px = "90%", out.height.px = 384, params.src = "first-steps-14, exercise = TRUE", 
         fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
@@ -3144,7 +3087,7 @@ learnr:::store_exercise_cache(structure(list(label = "saving-your-plots-5", glob
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "minutes", question = structure("Сколько по времени в минутах у Вас потребовало выполнение данного урока (например, 45)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_d7d821d", 
+"character")), answers = list(structure(list(id = "lnr_ans_7429af8", 
     option = character(0), value = NULL, label = NULL, correct = TRUE, 
     message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -3153,7 +3096,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "minutes-answer", 
     question = "minutes"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 750806189.650379, options = list(
+    allow_retry = TRUE, seed = 1975650594.08002, options = list(
         min = 0, max = 360, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
