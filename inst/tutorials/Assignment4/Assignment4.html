@@ -133,9 +133,8 @@ if (window.hljs) {
 </div>
 <div id="section-план-действий" class="section level2">
 <h2>План действий</h2>
-<p>В рамках данной практической работы мы научимся проводить с помощью
-языка R важные трансформации с данными, включающие следующие
-действия:</p>
+<p>В рамках данной практической работы мы научимся проводить
+трансформации с данными, включающие следующие действия:</p>
 <ul>
 <li>Создание новых переменных с помощью функции
 <code>mutate()</code></li>
@@ -183,10 +182,10 @@ class="section level2">
 <p>Чаще всего новые переменные создаются на основе той информации,
 которая уже содержится в датасете, и функция <code>mutate()</code>
 помогает нам это сделать. Так как <code>mutate()</code> всегда создает
-новую переменную и копирует ее в конец датасета, давайте создадим более
-узкий датасет, в котором будут содержаться только те переменные, которые
-мы будем использовать в упражнениях, чтобы нам было видно, что
-происходит с набором данных.</p>
+новую переменную и копирует ее в конец датасета. Используем более узкий
+датасет, в котором будут содержаться только те переменные, которые мы
+будем использовать в упражнениях, чтобы нам было видно, что происходит с
+набором данных.</p>
 <p>Переменные сокращенного набора:</p>
 <ul>
 <li>H01_01 - Пол</li>
@@ -202,13 +201,15 @@ class="section level2">
 на своей основной работе, включая сверхурочную работу, если таковая
 имеется?</li>
 </ul>
-<p>Код ниже создает новую переменную ‘DOH_NA_CHEL’ помощью функции
-<code>mutate()</code> путем вычисления частного от деления средних
-доходов домохозяйства на количество человек, которые в нем проживают, и
-количество лет обучение в год - частное от деление общего количества лет
-обучения на возраст опрошенного. Функция <code>mutate()</code>
-возвращает новый датафрейм, который содержит новые переменные,
-присоединенные к исходным данным.</p>
+<p>Код ниже создает две новых переменных:</p>
+<ul>
+<li>переменную ‘DOH_NA_CHEL’ путем деления средних доходов домохозяйства
+на количество человек, которые в нем проживают, и</li>
+<li>количество лет обучения в год - частное от деления общего количества
+лет обучения на возраст опрошенного.</li>
+</ul>
+<p>Функция <code>mutate()</code> возвращает новый датафрейм, который
+содержит новые переменные, присоединенные к исходным данным.</p>
 <div class="tutorial-exercise" data-label="mutate1" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
@@ -221,10 +222,10 @@ data-pipe="|&gt;">
 </div>
 <p>Отметим, что через <code>mutate()</code> мы можем сразу создать
 несколько переменных, а также последовательно создавать одни переменные
-на основе других в одном и том же блоке кода. Например, мы можем
-посчитать средний доход на одного члена домохозяйства и сразу же
-использовать эту новую переменную для вычисления разницы со средним
-значением по всей выборочной совокупности:</p>
+на основе других в том же блоке кода. Например, мы можем посчитать
+средний доход на одного члена домохозяйства и сразу же использовать эту
+новую переменную для вычисления разницы со средним значением по всей
+выборочной совокупности:</p>
 <pre class="r"><code>mutate(df_sml,
        DOH_NA_CHEL = DOX_mean / R_2_0,
        RAZ_DOH=DOH_NA_CHEL-mean(DOH_NA_CHEL, na.rm=TRUE)
@@ -240,7 +241,7 @@ data-pipe="|&gt;">
 копии оригинальных данных. Если мы хотим оставить только новые
 переменные, нам нужна функция <code>transmute()</code>. В коде ниже
 замените <code>mutate()</code> на <code>transmute()</code> и посмотрите,
-как будут отличаться .</p>
+как будут отличаться результаты.</p>
 <div class="tutorial-exercise" data-label="transmute"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -264,7 +265,7 @@ data-lines="0" data-pipe="|&gt;">
 <div id="section-полезные-функции-для-mutate" class="section level3">
 <h3>Полезные функции для mutate</h3>
 <p>Внутри <code>mutate()</code> мы можем использвать другие функции, так
-как оня является <strong>векторизованной</strong>. Векторизованная
+как она является <strong>векторизованной</strong>. Векторизованная
 функция берет на вход вектор значений и возвращает вектор с таким же
 количеством значений в качестве вывода.</p>
 <p>Какие функции будут особенно полезны с <code>mutate()</code>?</p>
@@ -759,7 +760,7 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "name", question = structure("Фамилия, имя:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8224cf0", 
+"character")), answers = list(structure(list(id = "lnr_ans_c6e54f4", 
     option = "Введите здесь свою фамилию и имя", value = "Введите здесь свою фамилию и имя", 
     label = structure("Введите здесь свою фамилию и имя", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -769,7 +770,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "name-answer", 
     question = "name"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 1237806944.4236, options = list(
+    allow_retry = TRUE, seed = 2010441974.56382, options = list(
         placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
 "tutorial_question")), session = session)
 </script>
@@ -777,7 +778,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "ID", question = structure("Группа:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8230f6c", 
+"character")), answers = list(structure(list(id = "lnr_ans_175f3ba", 
     option = "Введите номер своей группы", value = "Введите номер своей группы", 
     label = structure("Введите номер своей группы", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -787,7 +788,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "ID-answer", question = "ID"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1062792601.0051, options = list(placeholder = "Enter answer here...", 
+    seed = 1092316258.99135, options = list(placeholder = "Enter answer here...", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
@@ -1026,11 +1027,11 @@ learnr:::store_exercise_cache(structure(list(label = "mutateex3", global_setup =
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q1", question = structure("Каково максимальное количество часов работы в неделю?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f8d9066", 
+"character")), answers = list(structure(list(id = "lnr_ans_b95878d", 
     option = "83", value = 83, label = structure("83", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Почти! Проверьте max(df$I05_18).", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4d90eb7", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e1ebb2d", 
     option = "84", value = 84, label = structure("84", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1041,7 +1042,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q1-answer", question = "q1"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 1790888377.66605, options = list(
+    allow_retry = TRUE, seed = 1894147879.61797, options = list(
         min = 0, max = 100, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1431,7 +1432,7 @@ learnr:::store_exercise_cache(structure(list(label = "ex9", global_setup = struc
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "minutes", question = structure("Сколько по времени в минутах у Вас потребовало выполнение данного урока (например, 45)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_91be540", 
+"character")), answers = list(structure(list(id = "lnr_ans_29cd67", 
     option = character(0), value = NULL, label = NULL, correct = TRUE, 
     message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1440,7 +1441,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "minutes-answer", 
     question = "minutes"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 632149852.205632, options = list(
+    allow_retry = TRUE, seed = 1811838413.1563, options = list(
         min = 0, max = 360, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
