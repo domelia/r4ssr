@@ -906,6 +906,7 @@ library(tutorial.helpers)
 library(tidyverse)
 library(DataExplorer)
 library(dplyr)
+library(LearnBayes)
 
 
 knitr::opts_chunk$set(echo=FALSE)
@@ -933,7 +934,7 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "name", question = structure("Фамилия, имя:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_936a9e", 
+"character")), answers = list(structure(list(id = "lnr_ans_3164b91", 
     option = "Введите здесь свою фамилию и имя", value = "Введите здесь свою фамилию и имя", 
     label = structure("Введите здесь свою фамилию и имя", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -943,7 +944,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "name-answer", 
     question = "name"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 1672487813.22119, options = list(
+    allow_retry = TRUE, seed = 699886942.67409, options = list(
         placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
 "tutorial_question")), session = session)
 </script>
@@ -951,7 +952,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "ID", question = structure("Группа:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_cb04f54", 
+"character")), answers = list(structure(list(id = "lnr_ans_ff3c141", 
     option = "Введите номер своей группы", value = "Введите номер своей группы", 
     label = structure("Введите номер своей группы", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -961,28 +962,28 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "ID-answer", question = "ID"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1198916576.94171, options = list(placeholder = "Enter answer here...", 
+    seed = 738938196.655905, options = list(placeholder = "Enter answer here...", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q1", question = structure("Что из перечисленного НЕ является целью разведочного анализа данных (EDA)?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_b059591", 
+"character")), answers = list(structure(list(id = "lnr_ans_30cf405", 
     option = "Выявление аномалий и выбросов", value = "Выявление аномалий и выбросов", 
     label = structure("Выявление аномалий и выбросов", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ad3eeb6", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6af0b71", 
     option = "Проверка заранее сформулированных гипотез с помощью строгих статистических тестов", 
     value = "Проверка заранее сформулированных гипотез с помощью строгих статистических тестов", 
     label = structure("Проверка заранее сформулированных гипотез с помощью строгих статистических тестов", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_37c79b1", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6505c", 
     option = "Изучение структуры данных и взаимосвязей между переменными", 
     value = "Изучение структуры данных и взаимосвязей между переменными", 
     label = structure("Изучение структуры данных и взаимосвязей между переменными", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d817a5d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c51ee75", 
     option = "Визуализация распределений переменных", value = "Визуализация распределений переменных", 
     label = structure("Визуализация распределений переменных", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -993,24 +994,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Это относится к подтверждающему анализу (CDA).", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q1-answer", question = "q1"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 842585197.607641, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 662653665.191428, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q2", question = structure("Кто ввёл термин «Exploratory Data Analysis»?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_cc5f591", 
+"character")), answers = list(structure(list(id = "lnr_ans_e88558e", 
     option = "Андрей Николаевич Колмогоров", value = "Андрей Николаевич Колмогоров", 
     label = structure("Андрей Николаевич Колмогоров", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_891b14a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5c0616b", 
     option = "Джон Тьюки", value = "Джон Тьюки", label = structure("Джон Тьюки", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_580c8f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_170adc9", 
     option = "Рональд Фишер", value = "Рональд Фишер", label = structure("Рональд Фишер", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3882639", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1272f8c", 
     option = "Карл Пирсон", value = "Карл Пирсон", label = structure("Карл Пирсон", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1020,22 +1021,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Это американский математик из Принстонского университета.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q2-answer", question = "q2"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 717988638.665661, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 235720678.890234, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q3", question = structure("Какая функция пакета DataExplorer выдает общую сводку: число строк, колонок, пропусков и тип переменных?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_ec6c8ab", 
+"character")), answers = list(structure(list(id = "lnr_ans_c15de07", 
     option = "plot_intro()", value = "plot_intro()", label = structure("plot_intro()", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6e5a49f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4c1a2a4", 
     option = "introduce()", value = "introduce()", label = structure("introduce()", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b71a63", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e19d50b", 
     option = "summary()", value = "summary()", label = structure("summary()", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5ba926c", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_90e5f6", 
     option = "describe()", value = "describe()", label = structure("describe()", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1045,27 +1046,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Эта функция возвращает таблицу с метаданными датасета.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q3-answer", question = "q3"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 1297894647.89562, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 1572768284.26762, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q4", question = structure("Что показывает Q–Q plot (квантиль-квантиль график)?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_807252d", 
+"character")), answers = list(structure(list(id = "lnr_ans_a1ec612", 
     option = "Сравнение средних двух выборок", value = "Сравнение средних двух выборок", 
     label = structure("Сравнение средних двух выборок", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fe69c6d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3f18d", 
     option = "Сравнение эмпирических квантилей с теоретическими (например, нормальными)", 
     value = "Сравнение эмпирических квантилей с теоретическими (например, нормальными)", 
     label = structure("Сравнение эмпирических квантилей с теоретическими (например, нормальными)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1572b6e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c50a6cb", 
     option = "Долю пропущенных значений", value = "Долю пропущенных значений", 
     label = structure("Долю пропущенных значений", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_db62324", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_623add", 
     option = "Корреляцию между двумя переменными", value = "Корреляцию между двумя переменными", 
     label = structure("Корреляцию между двумя переменными", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1076,22 +1077,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Это график для визуальной проверки соответствия распределения.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q4-answer", question = "q4"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 1397906918.84905, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 1526985968.78894, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q5", question = structure("Какое значение стандартизированной переменной (z-оценки) часто считают порогом для обнаружения выброса?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_9d9f610", 
+"character")), answers = list(structure(list(id = "lnr_ans_35ba672", 
     option = "|z| > 1.96", value = "|z| > 1.96", label = structure("|z| &gt; 1.96", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2d11189", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7fd6300", 
     option = "|z| > 2.5", value = "|z| > 2.5", label = structure("|z| &gt; 2.5", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_30b9d16", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d050a05", 
     option = "|z| > 3.0", value = "|z| > 3.0", label = structure("|z| &gt; 3.0", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2eda7f4", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fb6f018", 
     option = "|z| > 1.0", value = "|z| > 1.0", label = structure("|z| &gt; 1.0", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1101,26 +1102,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Правило трёх сигм: за пределами 3 стандартных отклонений.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q5-answer", question = "q5"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 1460161214.82006, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 953338322.056067, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q6", question = structure("Какая статистика используется в фильтре Хэмпеля для определения границ выбросов?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_4119f21", 
+"character")), answers = list(structure(list(id = "lnr_ans_caabb91", 
     option = "Среднее и стандартное отклонение", value = "Среднее и стандартное отклонение", 
     label = structure("Среднее и стандартное отклонение", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1e9ceee", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1c83a", 
     option = "Медиана и MAD (медианное абсолютное отклонение)", 
     value = "Медиана и MAD (медианное абсолютное отклонение)", 
     label = structure("Медиана и MAD (медианное абсолютное отклонение)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_20025fe", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f00f594", 
     option = "Мода и размах", value = "Мода и размах", label = structure("Мода и размах", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d276b9f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b6c039", 
     option = "Первый и третий квартили", value = "Первый и третий квартили", 
     label = structure("Первый и третий квартили", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1131,27 +1132,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("MAD — устойчивая альтернатива стандартному отклонению.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q6-answer", question = "q6"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 170366073.420667, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 1065359691.5039, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q7", question = structure("Какую гипотезу проверяет тест Груббса (Grubbs’ test)?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_9a1e6e9", 
+"character")), answers = list(structure(list(id = "lnr_ans_d52208b", 
     option = "Что распределение является нормальным", value = "Что распределение является нормальным", 
     label = structure("Что распределение является нормальным", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e96888a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1239db1", 
     option = "Что максимальное или минимальное значение являются выбросами", 
     value = "Что максимальное или минимальное значение являются выбросами", 
     label = structure("Что максимальное или минимальное значение являются выбросами", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_33d16d3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8c90200", 
     option = "Что две выборки взяты из одного распределения", 
     value = "Что две выборки взяты из одного распределения", 
     label = structure("Что две выборки взяты из одного распределения", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7e58551", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c7f86b4", 
     option = "Что средние двух групп равны", value = "Что средние двух групп равны", 
     label = structure("Что средние двух групп равны", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1162,26 +1163,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Этот тест предназначен для поиска одного выброса на конце распределения.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q7-answer", question = "q7"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 536023168.750395, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 635843053.203912, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q8", question = structure("Для чего используется тест Шапиро–Уилка?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_6253fa7", 
+"character")), answers = list(structure(list(id = "lnr_ans_346e625", 
     option = "Для сравнения средних двух групп", value = "Для сравнения средних двух групп", 
     label = structure("Для сравнения средних двух групп", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_18ad42", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd6da72", 
     option = "Для проверки нормальности распределения", value = "Для проверки нормальности распределения", 
     label = structure("Для проверки нормальности распределения", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd089bf", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ee8fa02", 
     option = "Для проверки независимости признаков", value = "Для проверки независимости признаков", 
     label = structure("Для проверки независимости признаков", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b6a5e0b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_28b4f4c", 
     option = "Для выявления выбросов", value = "Для выявления выбросов", 
     label = structure("Для выявления выбросов", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1192,22 +1193,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Это один из самых мощных критериев нормальности.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q8-answer", question = "q8"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 697361424.175266, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 1356727868.86822, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q9", question = structure("Какой пакет в R предоставляет функцию <code>multi.table()<\u002fcode> для анализа вопросов с множественным выбором?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_46e1020", 
+"character")), answers = list(structure(list(id = "lnr_ans_8b1ee41", 
     option = "gtsummary", value = "gtsummary", label = structure("gtsummary", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f0ed4c1", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cae38c", 
     option = "questionr", value = "questionr", label = structure("questionr", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_529ad00", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_664eb1d", 
     option = "DataExplorer", value = "DataExplorer", label = structure("DataExplorer", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d1e2bce", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4e2a043", 
     option = "ggstatsplot", value = "ggstatsplot", label = structure("ggstatsplot", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1217,26 +1218,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Это пакет для работы с опросами и таблицами сопряжённости.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q9-answer", question = "q9"), loading = NULL, random_answer_order = TRUE, 
-    allow_retry = TRUE, seed = 716931893.166153, options = list()), class = c("learnr_radio", 
+    allow_retry = TRUE, seed = 1419947942.33879, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q10", question = structure("Что обозначают «усы» (whiskers) на ящичной диаграмме при стандартных настройках?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f899f39", 
+"character")), answers = list(structure(list(id = "lnr_ans_19f77d", 
     option = "Минимум и максимум выборки", value = "Минимум и максимум выборки", 
     label = structure("Минимум и максимум выборки", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4f8cb5f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_79f2177", 
     option = "Q1 – 1.5·IQR и Q3 + 1.5·IQR", value = "Q1 – 1.5·IQR и Q3 + 1.5·IQR", 
     label = structure("Q1 – 1.5·IQR и Q3 + 1.5·IQR", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6dce987", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b2378b", 
     option = "Доверительный интервал среднего", value = "Доверительный интервал среднего", 
     label = structure("Доверительный интервал среднего", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4349f3a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_eee7ca0", 
     option = "Стандартное отклонение", value = "Стандартное отклонение", 
     label = structure("Стандартное отклонение", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1247,7 +1248,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Усы доходят до самой дальней точки в передлах 1.5·IQR.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q10-answer", question = "q10"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = TRUE, seed = 1711452564.20304, 
+    random_answer_order = TRUE, allow_retry = TRUE, seed = 1124660936.47629, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -1268,18 +1269,18 @@ output$`tutorial-exercise-autoEDA-1-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-1", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-1", code = "", opts = list(
-        label = "\"autoEDA-1\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-1-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("civil_society", chunk_opts = list(
-        label = "autoEDA-1-solution", include = FALSE)), tests = NULL, 
-    options = list(eval = FALSE, echo = TRUE, results = "markup", 
-        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
-        comment = NA, highlight = FALSE, size = "normalsize", 
-        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
-        cache.path = "Assignment6_cache/html/", cache.vars = NULL, 
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-1", code = "", opts = list(label = "\"autoEDA-1\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-1-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("civil_society", chunk_opts = list(label = "autoEDA-1-solution", 
+        include = FALSE)), tests = NULL, options = list(eval = FALSE, 
+        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
+        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
+        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
+        cache = 0, cache.path = "Assignment6_cache/html/", cache.vars = NULL, 
         cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
         cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
         fig.align = "default", fig.path = "Assignment6_files/figure-html/", 
@@ -1310,18 +1311,19 @@ output$`tutorial-exercise-autoEDA-2-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-2", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-2", code = "", opts = list(
-        label = "\"autoEDA-2\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-2-code-check")), 
-    error_check = NULL, check = NULL, solution = structure(c("library(DataExplorer)", 
-    "introduce(civil_society)"), chunk_opts = list(label = "autoEDA-2-solution", 
-        include = FALSE)), tests = NULL, options = list(eval = FALSE, 
-        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
-        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
-        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
-        cache = 0, cache.path = "Assignment6_cache/html/", cache.vars = NULL, 
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-2", code = "", opts = list(label = "\"autoEDA-2\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-2-code-check")), error_check = NULL, check = NULL, 
+    solution = structure(c("library(DataExplorer)", "introduce(civil_society)"
+    ), chunk_opts = list(label = "autoEDA-2-solution", include = FALSE)), 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Assignment6_cache/html/", cache.vars = NULL, 
         cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
         cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
         fig.align = "default", fig.path = "Assignment6_files/figure-html/", 
@@ -1345,11 +1347,11 @@ learnr:::store_exercise_cache(structure(list(label = "autoEDA-2", global_setup =
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q1-autoEDA", 
     question = structure("Сколько в датасете наблюдений?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_5fa7ad9", 
+    "character")), answers = list(structure(list(id = "lnr_ans_22b96", 
         option = "505", value = 505, label = structure("505", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Почти! Проверьте столбец rows", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7a1056e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2d497bf", 
         option = "506", value = 506, label = structure("506", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1361,7 +1363,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "q1-autoEDA-answer", question = "q1-autoEDA"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 565180910.236817, options = list(min = 0, max = 100, 
+    seed = 567369025.735798, options = list(min = 0, max = 100, 
         step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1369,11 +1371,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q2-autoEDA", 
     question = structure("Сколько в датасете переменных?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_cb95da2", 
+    "character")), answers = list(structure(list(id = "lnr_ans_9b91ec0", 
         option = "192", value = 192, label = structure("192", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Почти! Проверьте столбец columns", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8e5deb", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1e99801", 
         option = "193", value = 193, label = structure("193", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1385,7 +1387,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "q2-autoEDA-answer", question = "q2-autoEDA"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1989378569.07362, options = list(min = 0, max = 100, 
+    seed = 1416352505.84046, options = list(min = 0, max = 100, 
         step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1394,11 +1396,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q3-autoEDA", 
     question = structure("Сколько в датасете количественных переменных (continuous_columns)?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_884185d", 
+    "character")), answers = list(structure(list(id = "lnr_ans_2d3ca2d", 
         option = "20", value = 20, label = structure("20", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Почти!", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e07a4f2", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_afe0df9", 
         option = "21", value = 21, label = structure("21", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1410,7 +1412,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "q3-autoEDA-answer", question = "q3-autoEDA"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 2116176349.01458, options = list(min = 0, max = 100, 
+    seed = 2048362306.54616, options = list(min = 0, max = 100, 
         step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1426,12 +1428,13 @@ output$`tutorial-exercise-autoEDA-3-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-3", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-3", code = "", opts = list(
-        label = "\"autoEDA-3\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-3-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("plot_intro(civil_society)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-3", code = "", opts = list(label = "\"autoEDA-3\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-3-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("plot_intro(civil_society)", chunk_opts = list(
         label = "autoEDA-3-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1460,11 +1463,11 @@ learnr:::store_exercise_cache(structure(list(label = "autoEDA-3", global_setup =
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q4-autoEDA", 
     question = structure("Какую долю в процентах занимают в наборе дискретные переменные?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_28d1ca0", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5e15185", 
         option = "90", value = 90, label = structure("90", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Почти! Проверьте Discrete Columns", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b38c67", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2ef7c34", 
         option = "89", value = 89, label = structure("89", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1476,7 +1479,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "q4-autoEDA-answer", question = "q4-autoEDA"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 830032907.613486, options = list(min = 0, max = 100, 
+    seed = 1281411258.9033, options = list(min = 0, max = 100, 
         step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1492,12 +1495,13 @@ output$`tutorial-exercise-autoEDA-4-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-4", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-4", code = "", opts = list(
-        label = "\"autoEDA-4\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-4-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("plot_missing(civil_society[,c(\"Q2\", \"Q4\", \"Q5\", \"Q8\",\"Q9\", \"Q10\",\"Q11\", \"Q13\",\"Q14\",\"Q15\",\"Q16\",\"Q17\")])", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-4", code = "", opts = list(label = "\"autoEDA-4\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-4-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("plot_missing(civil_society[,c(\"Q2\", \"Q4\", \"Q5\", \"Q8\",\"Q9\", \"Q10\",\"Q11\", \"Q13\",\"Q14\",\"Q15\",\"Q16\",\"Q17\")])", chunk_opts = list(
         label = "autoEDA-4-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1526,16 +1530,16 @@ learnr:::store_exercise_cache(structure(list(label = "autoEDA-4", global_setup =
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q5-autoEDA", question = structure("Какая из переменных имеет больше всего пропущенных значечние?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_72142e3", 
+"character")), answers = list(structure(list(id = "lnr_ans_f59c277", 
     option = "Q11", value = "Q11", label = structure("Q11", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b136fcd", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7f4b304", 
     option = "Q17", value = "Q17", label = structure("Q17", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_57a9b9e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_47bb4df", 
     option = "Q2", value = "Q2", label = structure("Q2", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c727d4a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e6b2f65", 
     option = "Q8", value = "Q8", label = structure("Q8", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1545,7 +1549,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Нужно выбрать переменную, обозначенную на графике желтым цветом.", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q5-autoEDA-answer", question = "q5-autoEDA"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = TRUE, seed = 4146928.99806894, 
+    random_answer_order = TRUE, allow_retry = TRUE, seed = 768380611.142195, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -1561,12 +1565,13 @@ output$`tutorial-exercise-autoEDA-5-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-5", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-5", code = "", opts = list(
-        label = "\"autoEDA-5\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-5-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("plot_bar(civil_society[,c(\"Q5\",\"Q8\",\"Q9\", \"Q10\")], ncol = 2)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-5", code = "", opts = list(label = "\"autoEDA-5\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-5-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("plot_bar(civil_society[,c(\"Q5\",\"Q8\",\"Q9\", \"Q10\")], ncol = 2)", chunk_opts = list(
         label = "autoEDA-5-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1603,12 +1608,13 @@ output$`tutorial-exercise-autoEDA-6-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-6", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-6", code = "", opts = list(
-        label = "\"autoEDA-6\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-6-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("plot_bar(civil_society[,c(\"Q5\",\"Q8\",\"Q9\", \"Q10\", \"place2\")], order_bar=FALSE, ncol = 2, by=\"place2\")", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-6", code = "", opts = list(label = "\"autoEDA-6\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-6-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("plot_bar(civil_society[,c(\"Q5\",\"Q8\",\"Q9\", \"Q10\", \"place2\")], order_bar=FALSE, ncol = 2, by=\"place2\")", chunk_opts = list(
         label = "autoEDA-6-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1645,14 +1651,15 @@ output$`tutorial-exercise-autoEDA-7-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "autoEDA-7", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "autoEDA-7", code = "", opts = list(
-        label = "\"autoEDA-7\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "autoEDA-7-code-check")), 
-    error_check = NULL, check = NULL, solution = structure(c("glimpse(civil_society)", 
-    ""), chunk_opts = list(label = "autoEDA-7-solution", include = FALSE)), 
-    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "autoEDA-7", code = "", opts = list(label = "\"autoEDA-7\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "autoEDA-7-code-check")), error_check = NULL, check = NULL, 
+    solution = structure(c("glimpse(civil_society)", ""), chunk_opts = list(
+        label = "autoEDA-7-solution", include = FALSE)), tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
         background = "#F7F7F7", strip.white = TRUE, cache = 0, 
@@ -1687,12 +1694,13 @@ output$`tutorial-exercise-EDA-8-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-8", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-8", code = "", opts = list(
-        label = "\"EDA-8\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-8-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("psych::describe(civil_society$Q23_SQ015)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-8", code = "", opts = list(label = "\"EDA-8\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-8-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("psych::describe(civil_society$Q23_SQ015)", chunk_opts = list(
         label = "EDA-8-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1729,12 +1737,13 @@ output$`tutorial-exercise-EDA-9-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-9", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-9", code = "", opts = list(
-        label = "\"EDA-9\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-9-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("DescTools::Desc(civil_society$Q23_SQ015)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-9", code = "", opts = list(label = "\"EDA-9\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-9-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("DescTools::Desc(civil_society$Q23_SQ015)", chunk_opts = list(
         label = "EDA-9-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1771,12 +1780,13 @@ output$`tutorial-exercise-EDA-10-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-10", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-10", code = "", opts = list(
-        label = "\"EDA-10\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-10-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("summarytools::descr(civil_society$Q23_SQ015)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-10", code = "", opts = list(label = "\"EDA-10\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-10-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("summarytools::descr(civil_society$Q23_SQ015)", chunk_opts = list(
         label = "EDA-10-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1804,11 +1814,11 @@ learnr:::store_exercise_cache(structure(list(label = "EDA-10", global_setup = st
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q6-EDA", question = structure("Чему равно количество пропущенных значений?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_bc7bcbb", 
+"character")), answers = list(structure(list(id = "lnr_ans_b902c21", 
     option = "16", value = 16, label = structure("16", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Почти!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_404243e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_56230f3", 
     option = "15", value = 15, label = structure("15", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1819,7 +1829,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q6-EDA-answer", question = "q6-EDA"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 1197720040.44227, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 663555438.691008, 
     options = list(min = 0, max = 100, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1827,11 +1837,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q7-EDA", question = structure("Чему равно медианное абсолютное значение mad?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_179f839", 
+"character")), answers = list(structure(list(id = "lnr_ans_e846d94", 
     option = "2.98", value = 2.98, label = structure("2.98", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Почти!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_643b2b4", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_feed506", 
     option = "2.97", value = 2.97, label = structure("2.97", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1842,18 +1852,18 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q7-EDA-answer", question = "q7-EDA"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 89735922.9582134, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 987939611.039955, 
     options = list(min = 0, max = 100, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q8-EDA", question = structure("Чему равен коэффициент вариации (CV, vcoef)?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_22800ae", 
+"character")), answers = list(structure(list(id = "lnr_ans_80e4e76", 
     option = "0.44", value = 0.44, label = structure("0.44", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Почти!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fccdc68", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2a05992", 
     option = "0.45", value = 0.45, label = structure("0.45", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1864,7 +1874,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q8-EDA-answer", question = "q8-EDA"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 154194215.928198, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1718455661.19978, 
     options = list(min = 0, max = 100, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1872,11 +1882,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "q9-EDA", question = structure("Чему равен коэффициент асимметрии (Skewness)?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3539f02", 
+"character")), answers = list(structure(list(id = "lnr_ans_68c090d", 
     option = "0.05", value = 0.05, label = structure("0.05", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Почти!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_caf0877", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16ae3e8", 
     option = "0.04", value = 0.04, label = structure("0.04", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Верно!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1887,7 +1897,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q9-EDA-answer", question = "q9-EDA"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 1806641628.15872, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 508785276.763078, 
     options = list(min = 0, max = 100, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -1903,12 +1913,13 @@ output$`tutorial-exercise-EDA-11-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-11", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-11", code = "", opts = list(
-        label = "\"EDA-11\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-11-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("DescTools::Outlier(d.pizza$temperature, na.rm=T)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-11", code = "", opts = list(label = "\"EDA-11\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-11-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("DescTools::Outlier(d.pizza$temperature, na.rm=T)", chunk_opts = list(
         label = "EDA-11-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1945,12 +1956,13 @@ output$`tutorial-exercise-EDA-12-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-12", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-12", code = "", opts = list(
-        label = "\"EDA-12\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-12-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("d.pizza[Outlier(d.pizza$temperature, value=FALSE,  na.rm=T), c(\"driver\", \"temperature\", \"delivery_min\")]", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-12", code = "", opts = list(label = "\"EDA-12\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-12-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("d.pizza[Outlier(d.pizza$temperature, value=FALSE,  na.rm=T), c(\"driver\", \"temperature\", \"delivery_min\")]", chunk_opts = list(
         label = "EDA-12-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -1987,12 +1999,13 @@ output$`tutorial-exercise-EDA-13-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-13", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-13", code = "", opts = list(
-        label = "\"EDA-13\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-13-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("DescTools::Outlier(studentdata$WakeUp, na.rm=T)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-13", code = "", opts = list(label = "\"EDA-13\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-13-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("DescTools::Outlier(studentdata$WakeUp, na.rm=T)", chunk_opts = list(
         label = "EDA-13-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -2020,7 +2033,7 @@ learnr:::store_exercise_cache(structure(list(label = "EDA-13", global_setup = st
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "EDA-q10", question = structure("Что Вы можете сказать по поводу результатов - дайте небольшой комментарий:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_4d5c147", 
+"character")), answers = list(structure(list(id = "lnr_ans_6992f8e", 
     option = "Введите здесь свою фамилию и имя", value = "Введите здесь свою фамилию и имя", 
     label = structure("Введите здесь свою фамилию и имя", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2030,7 +2043,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "EDA-q10-answer", 
     question = "EDA-q10"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 220891740.397139, options = list(
+    allow_retry = TRUE, seed = 695808572.675989, options = list(
         placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
 "tutorial_question")), session = session)
 </script>
@@ -2046,12 +2059,13 @@ output$`tutorial-exercise-EDA-14-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-14", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-14", code = "", opts = list(
-        label = "\"EDA-14\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-14-code-check")), 
-    error_check = NULL, check = NULL, solution = structure("questionr::freq(civil_society$Q4)", chunk_opts = list(
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-14", code = "", opts = list(label = "\"EDA-14\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-14-code-check")), error_check = NULL, check = NULL, 
+    solution = structure("questionr::freq(civil_society$Q4)", chunk_opts = list(
         label = "EDA-14-solution", include = FALSE)), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -2088,13 +2102,14 @@ output$`tutorial-exercise-EDA-15-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "EDA-15", global_setup = structure(c("library(learnr)", 
 "library(gradethis)", "library(tutorial.helpers)", "library(tidyverse)", 
-"library(DataExplorer)", "library(dplyr)", "", "", "knitr::opts_chunk$set(echo=FALSE)"
-), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
-    chunks = list(list(label = "EDA-15", code = "", opts = list(
-        label = "\"EDA-15\"", exercise = "TRUE"), engine = "r")), 
-    code_check = structure("grade_code", chunk_opts = list(label = "EDA-15-code-check")), 
-    error_check = NULL, check = NULL, solution = structure(c("Q3<-civil_society |>", 
-    "  select(starts_with(\"Q3_\"))", "Q3_tab<-Q3 |> ", "  questionr::multi.table(true.codes = \"Да\")", 
+"library(DataExplorer)", "library(dplyr)", "library(LearnBayes)", 
+"", "", "knitr::opts_chunk$set(echo=FALSE)"), chunk_opts = list(
+    label = "setup", include = FALSE)), setup = NULL, chunks = list(
+    list(label = "EDA-15", code = "", opts = list(label = "\"EDA-15\"", 
+        exercise = "TRUE"), engine = "r")), code_check = structure("grade_code", chunk_opts = list(
+    label = "EDA-15-code-check")), error_check = NULL, check = NULL, 
+    solution = structure(c("Q3<-civil_society |>", "  select(starts_with(\"Q3_\"))", 
+    "Q3_tab<-Q3 |> ", "  questionr::multi.table(true.codes = \"Да\")", 
     "labs<-sjlabelled::get_label(Q3)", "rownames(Q3_tab)<-labs", 
     "Q3_tab"), chunk_opts = list(label = "EDA-15-solution", include = FALSE)), 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -2124,7 +2139,7 @@ learnr:::store_exercise_cache(structure(list(label = "EDA-15", global_setup = st
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "minutes", question = structure("Сколько по времени в минутах у Вас потребовало выполнение данного урока (например, 45)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3eb28b", 
+"character")), answers = list(structure(list(id = "lnr_ans_13b63f9", 
     option = character(0), value = NULL, label = NULL, correct = TRUE, 
     message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -2133,7 +2148,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "minutes-answer", 
     question = "minutes"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 857828586.600542, options = list(
+    allow_retry = TRUE, seed = 1331423570.88001, options = list(
         min = 0, max = 360, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
@@ -2154,7 +2169,7 @@ r4ssr::submission_server()
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124]}},"value":[{"type":"character","attributes":{},"value":["backports","base","base64enc","boot","bslib","cachem","cellranger","checkmate","class","cli","coda","commonmark","compiler","data.table","data.tree","DataExplorer","datasets","DescTools","digest","dplyr","e1071","evaluate","Exact","expm","farver","fastmap","fontawesome","forcats","fs","generics","ggplot2","gld","glue","gradethis","graphics","grDevices","grid","gridExtra","gtable","haven","highr","hms","htmltools","htmlwidgets","httpuv","httr","igraph","insight","jquerylib","jsonlite","knitr","labeling","labelled","later","lattice","LearnBayes","learnr","lifecycle","litedown","lmom","lubridate","magick","magrittr","markdown","MASS","Matrix","matrixStats","methods","mime","miniUI","mnormt","mvtnorm","networkD3","nlme","otel","pander","parallel","pillar","pkgconfig","plyr","promises","proxy","psych","purrr","questionr","r4ssr","R6","rapportools","RColorBrewer","Rcpp","readr","readxl","reshape2","rlang","rmarkdown","rootSolve","rprojroot","rstudioapi","S7","sass","scales","shiny","sjlabelled","splines","stats","stringi","stringr","summarytools","survival","tcltk","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tutorial.helpers","tzdb","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.5.0","4.5.2","0.1-3","1.3-32","0.9.0","1.1.0","1.1.0","2.3.3","7.3-23","3.6.5","0.19-4.1","2.0.0","4.5.2","1.18.2.1","1.2.0","0.8.4","4.5.2","0.99.60","0.6.39","1.2.0","1.7-17","1.0.5","3.3","1.0-0","2.1.2","1.2.0","0.5.3","1.0.1","1.6.6","0.1.4","4.0.2","2.6.8","1.8.0","0.2.14","4.5.2","4.5.2","4.5.2","2.3","0.3.6","2.5.5","0.11","1.1.4","0.5.9","1.6.4","1.6.16","1.4.7","2.2.1","1.4.6","0.1.4","2.0.0","1.51","0.4.3","2.16.0","1.4.5","0.22-7","2.15.2","0.11.6","1.0.5","0.9","3.2","1.9.4","2.9.0","2.0.4","2.0","7.3-65","1.7-4","1.5.0","4.5.2","0.13","0.1.2","2.1.1","1.3-3","0.4.1","3.1-168","0.2.0","0.6.6","4.5.2","1.11.1","2.0.3","1.8.9","1.5.0","0.4-28","2.5.6","1.2.1","0.8.1","0.0.0.9000","2.6.1","1.2","1.1-3","1.1.1","2.1.6","1.4.5","1.4.5.9000","1.1.7","2.30","1.8.2.4","2.1.1","0.18.0","0.2.1","0.4.10","1.4.0","1.12.1","1.2.0","4.5.2","4.5.2","1.8.7","1.6.0","1.1.5","3.8-3","4.5.2","3.3.1","1.3.2","1.2.1","2.0.0","0.3.0","4.5.2","0.6.1","0.5.0","4.5.2","0.7.1","3.0.2","0.56","1.8-4","2.3.12"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125]}},"value":[{"type":"character","attributes":{},"value":["backports","base","base64enc","boot","bslib","cachem","cellranger","checkmate","class","cli","coda","commonmark","compiler","data.table","data.tree","DataExplorer","datasets","DescTools","digest","dplyr","e1071","evaluate","Exact","expm","farver","fastmap","fontawesome","forcats","fs","generics","ggplot2","gld","glue","gradethis","graphics","grDevices","grid","gridExtra","gtable","haven","highr","hms","htmltools","htmlwidgets","httpuv","httr","igraph","insight","jquerylib","jsonlite","knitr","labeling","labelled","later","lattice","LearnBayes","learnr","lifecycle","litedown","lmom","lubridate","magick","magrittr","markdown","MASS","Matrix","matrixStats","methods","mime","miniUI","mnormt","mvtnorm","networkD3","nlme","otel","pander","parallel","pillar","pkgconfig","plyr","promises","proxy","psych","purrr","questionr","r4ssr","R6","rapportools","RColorBrewer","Rcpp","readr","readxl","reshape2","rlang","rmarkdown","rootSolve","rprojroot","rstudioapi","S7","sass","scales","shiny","sjlabelled","snakecase","splines","stats","stringi","stringr","summarytools","survival","tcltk","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tutorial.helpers","tzdb","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.5.0","4.5.2","0.1-3","1.3-32","0.9.0","1.1.0","1.1.0","2.3.3","7.3-23","3.6.5","0.19-4.1","2.0.0","4.5.2","1.18.2.1","1.2.0","0.8.4","4.5.2","0.99.60","0.6.39","1.2.0","1.7-17","1.0.5","3.3","1.0-0","2.1.2","1.2.0","0.5.3","1.0.1","1.6.6","0.1.4","4.0.2","2.6.8","1.8.0","0.2.14","4.5.2","4.5.2","4.5.2","2.3","0.3.6","2.5.5","0.11","1.1.4","0.5.9","1.6.4","1.6.16","1.4.7","2.2.1","1.4.6","0.1.4","2.0.0","1.51","0.4.3","2.16.0","1.4.5","0.22-7","2.15.2","0.11.6","1.0.5","0.9","3.2","1.9.4","2.9.0","2.0.4","2.0","7.3-65","1.7-4","1.5.0","4.5.2","0.13","0.1.2","2.1.1","1.3-3","0.4.1","3.1-168","0.2.0","0.6.6","4.5.2","1.11.1","2.0.3","1.8.9","1.5.0","0.4-28","2.5.6","1.2.1","0.8.1","0.0.0.9000","2.6.1","1.2","1.1-3","1.1.1","2.1.6","1.4.5","1.4.5.9000","1.1.7","2.30","1.8.2.4","2.1.1","0.18.0","0.2.1","0.4.10","1.4.0","1.12.1","1.2.0","0.11.1","4.5.2","4.5.2","1.8.7","1.6.0","1.1.5","3.8-3","4.5.2","3.3.1","1.3.2","1.2.1","2.0.0","0.3.0","4.5.2","0.6.1","0.5.0","4.5.2","0.7.1","3.0.2","0.56","1.8-4","2.3.12"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>
