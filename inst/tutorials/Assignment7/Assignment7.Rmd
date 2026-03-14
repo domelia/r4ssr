@@ -480,7 +480,7 @@ t.test(data, mu = 16)
 ```
 
 ```{r t-one-way-1-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r t-one-way-essay}
@@ -522,7 +522,7 @@ t.test(score~gender, data = js)
 ```
 
 ```{r js-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r js-essay}
@@ -592,7 +592,7 @@ ggbetweenstats(
 ```
 
 ```{r js-2-code-check}
-grade_code
+grade_code()
 ```
 
 
@@ -626,7 +626,7 @@ wilcox.test(NPO~NKO_link, data = civil_society)
 ```
 
 ```{r mu-1-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r mu-1-essay}
@@ -667,7 +667,7 @@ ggbetweenstats(civil_society, NKO_link, NPO, xlab = "Оценка качеств
 ```
 
 ```{r mu-vis-code-check}
-grade_code
+grade_code()
 ```
 
 ### Упражнение 6
@@ -707,7 +707,7 @@ summary(res)
 ```
 
 ```{r js-aov-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r js-aov-essay}
@@ -742,7 +742,7 @@ tukey_hsd(js, score ~ education_level)
 ```
 
 ```{r js-pwc-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r js-pwc-essay}
@@ -812,7 +812,7 @@ ggbetweenstats(
 ```
 
 ```{r aov-viz-code-check}
-grade_code
+grade_code()
 ```
 
 
@@ -859,7 +859,7 @@ pairwise.wilcox.test(civil_society$business,civil_society$place,p.adjust.method 
 ```
 
 ```{r ks-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r ks-essay}
@@ -924,7 +924,7 @@ ggbetweenstats(
 ```
 
 ```{r ks-viz-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r download-answers, child ="child_documents/download_answers.Rmd"}

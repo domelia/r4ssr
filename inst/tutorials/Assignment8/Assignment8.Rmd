@@ -283,7 +283,7 @@ $$\bar{d}=\frac{d_1+d_2+...+ d_n}{n}$$
 
 - Посчитать значение t-критерия по формуле:
 
-$$t = \frac{\bar{d}}{s/\sqrt{n}},$$ где $s$ - стандартное отклонение различий ($d$), $n$ - объем выборки (количество пар значений, по которым высчитываются $d$)/
+$$t = \frac{\bar{d}}{s/\sqrt{n}},$$ где $s$ - стандартное отклонение различий ($d$), $n$ - объем выборки (количество пар значений, по которым высчитываются $d$)
 
 Далее мы можем вычислить p-значение для абсолютного значения статистики критерия ($|t|$) на основе сведений о количестве степеней свободы ($df$): $df=n−1$.
 
@@ -306,7 +306,7 @@ t.test(data$t1, data$t2, paired=TRUE)
 t.test(data$t1, data$t2, paired=TRUE)
 ```
 ```{r t-paired-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r t-paired-essay}
@@ -365,7 +365,7 @@ ggwithinstats(
 ```
 
 ```{r ttest-vis-code-check}
-grade_code
+grade_code()
 ```
 
 
@@ -450,7 +450,7 @@ summary(res)
 ```
 
 ```{r anova-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r anova-essay}
@@ -530,7 +530,7 @@ ggwithinstats(
 ```
 
 ```{r anova-viz-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r, holm, warning=FALSE}
@@ -570,7 +570,7 @@ wilcox.test(data$t1, data$t2, paired = TRUE, alternative = "two.sided")
 ```
 
 ```{r wilcox-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r wilcox-essay}
@@ -610,7 +610,7 @@ res
 ```
 
 ```{r fried-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r js-aov-essay}
@@ -650,7 +650,7 @@ chisq.test(civil_society$place, civil_society$NKO_link)
 ```
 
 ```{r chi-code-check}
-grade_code
+grade_code()
 ```
 
 ```{r chi-essay}
@@ -688,7 +688,7 @@ ggbarstats(civil_society, x = NKO_link, y = place)
 ```
 
 ```{r ggbar-code-check}
-grade_code
+grade_code()
 ```
 
 
