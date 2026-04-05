@@ -326,7 +326,7 @@ head()
 ```
 
 
-```{r ex1-solution, include = FALSE}
+```{r ex1-solution, include = FALSE, echo=FALSE}
 head(bfi)
 ```
 
