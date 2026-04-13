@@ -22,6 +22,7 @@ library(datarium)
 library(rstatix)
 data("jobsatisfaction")
 js<-jobsatisfaction
+tutorial_options(exercise.reveal_solution = FALSE)
 ```
 
 
@@ -878,13 +879,7 @@ question_text(
 У Вас должно получиться следующее:
 
 ```{r echo=FALSE, eval=TRUE}
-ggbetweenstats(
-  civil_society,
-  x    = place,
-  y    = business,
-  type = "non-parametric",
-  xlab = "Оценка социальной ответственности бизнеса в поселениях разного типа"
-)
+
 ```
 
 
@@ -894,11 +889,11 @@ ggbetweenstats(
 
 ```{r ks-viz-test, include = FALSE}
 ggbetweenstats(
-  js,
-  x    = education_level,
-  y    = score,
-  type = "parametric",
-  xlab = "Сравнение уровня удовлетворенности работой в группах с разным образованием"
+  civil_society,
+  x    = place,
+  y    = business,
+  type = "non-parametric",
+  xlab = "Оценка социальной ответственности бизнеса в поселениях разного типа"
 )
 ```
 
@@ -915,11 +910,11 @@ ggbetweenstats(
 
 ```{r ks-viz-solution, include = FALSE}
 ggbetweenstats(
-  js,
-  x    = education_level,
-  y    = score,
-  type = "parametric",
-  xlab = "Сравнение уровня удовлетворенности работой в группах с разным образованием"
+  civil_society,
+  x    = place,
+  y    = business,
+  type = "non-parametric",
+  xlab = "Оценка социальной ответственности бизнеса в поселениях разного типа"
 )
 ```
 

@@ -24,15 +24,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 tutorial_options(exercise.reveal_solution = FALSE)
 
-# ============================================================
-# ГЕНЕРАЦИЯ ДАННЫХ
-# ============================================================
-# Данные о социальном благополучии молодежи (N = 500)
-# Три латентных фактора:
-#   trust     — доверие институтам (government, courts, police)
-#   wellbeing — субъективное благополучие (life satisfaction, happiness, positive affect)
-#   civic     — гражданская активность (voting, participation, volunteering)
-
 set.seed(2024)
 
 pop_model <- '
@@ -56,10 +47,6 @@ social_data$sex <- factor(
   sample(c("мужчины", "женщины"), 500, replace = TRUE, prob = c(0.48, 0.52)),
   levels = c("мужчины", "женщины")
 )
-
-# ============================================================
-# ПРЕДОБУЧЕННЫЕ МОДЕЛИ (используются в упражнениях)
-# ============================================================
 
 # --- CFA ---
 cfa_model <- '
@@ -452,7 +439,7 @@ lavaanPlot(
 ```
 
 ```{r ex5-solution, include=FALSE}
-lavaanPlot(model = fit_cfa, stand = TRUE, coefs = TRUE, stars = "loadings")
+lavaanPlot(model = fit_cfa, stand = TRUE, coefs = TRUE, stars = "latent")
 ```
 
 ```{r ex5-check}
@@ -508,13 +495,7 @@ summary(fit_config, fit.measures = TRUE)
 ```
 
 ```{r ex6-check}
-grade_this({
-  if (!exists("fit_config")) fail("Создайте объект fit_config.")
-  if (!inherits(fit_config, "lavaan")) fail("fit_config должен быть объектом lavaan.")
-  gi <- lavaan::lavInspect(fit_config, "group")
-  if (length(gi) != 2) fail("Модель должна быть двухгрупповой (sex).")
-  pass("Конфигуральная модель оценена.")
-})
+grade_code()
 ```
 
 ```{r ex-config-q}
