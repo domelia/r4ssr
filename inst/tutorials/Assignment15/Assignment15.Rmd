@@ -8,10 +8,7 @@ encoding: UTF-8
 ---
 
 ```{r setup-locale, include=FALSE}
-Sys.setlocale("LC_CTYPE", "Russian_Russia.1251")  # или другую доступную русскую локаль
-# или, если есть UTF-8-локаль:
-# Sys.setlocale("LC_ALL", "English_United States.utf8")
-
+Sys.setlocale("LC_CTYPE", "Russian_Russia.1251")  
 options(encoding = "UTF-8")
 
 ```
@@ -25,22 +22,16 @@ library(quanteda)
 library(quanteda.textstats)
 library(quanteda.textplots)
 library(topicmodels)
-library(rulexicon)
 
 knitr::opts_chunk$set(echo = FALSE)
 tutorial_options(exercise.reveal_solution = FALSE)
 
 # ── Корпус: 2000 новостей из датасета Lenta ──────────────────────
 library(stringi)
+set.seed(42)
+news<-readRDS("data/news.rds")
+anno_df <- readRDS("data/anno_df.rds")
 
-news<-read_csv("data/lenta_subset_2000.csv")
-
-news <- news |>
-  transmute(
-    doc_id     = paste0("doc", row_number()),
-    topic_true = topic,
-    text       = text
-  )
 
 texts_ru  <- news$text
 doc_meta  <- news %>%
@@ -57,9 +48,6 @@ tokens_ru <- tokens(corpus_ru,
                     remove_punct   = TRUE,
                     remove_numbers = TRUE,
                     remove_symbols = TRUE)
-
-anno_df <- readRDS("data/anno_df.rds")
-
 lemma_tokens<-readRDS("data/lemma_tokens.rds")
 
 library(stopwords)
@@ -84,18 +72,8 @@ library(topicmodels)
 
 dtm_lda <- convert(dfm_lemma, to = "topicmodels")
 
-lda_model <- LDA(
-  dtm_lda,
-  k       = 5,          # под 5 рубрик Lenta
-  method  = "Gibbs",
-  control = list(
-    seed   = 42,
-    burnin = 100,
-    iter   = 500,
-    thin   = 10
-  )
-)
-
+lda_model <- LDA(dtm_lda, k = 5, method = "Gibbs",
+                 control = list(seed = 42, burnin = 100, iter = 500, thin = 10))
 top_terms  <- terms(lda_model, 10)
 doc_topics <- topics(lda_model)
 
@@ -169,7 +147,7 @@ corpus |>                                      # 1. Корпус
 Корпус — это организованная коллекция текстов, часто сопровождаемая метаданными (о том, каковы источник, дата, тема, автор текста и другие атрибуты).
 В пакете `quanteda` корпус создается функцией `corpus()`. Каждый документ в корпусе может иметь произвольный набор переменных (`docvars`).
 
-В данном тьюториале мы будем работать с текстами новостей, составляющих часть большого набора данных Lenta.ru, собранного Дмитрием Юткиным для задач NLP. Новости собирались с 30 августа 1999 по декабрь 2019, общий объем данных превышает 800 тыс. документов и 2 Гб. Мы выгрузили 2000 документов для того, чтобы продемонстрировать возможности анализа текстовых документов в R.
+В данном тьюториале мы будем работать с текстами новостей, составляющих часть большого набора данных Lenta.ru, собранного Дмитрием Юткиным для задач NLP. Новости собирались с 30 августа 1999 по декабрь 2019, общий объем данных превышает 800 тыс. документов и 2 Гб. Мы выгрузили 500 документов для того, чтобы продемонстрировать возможности анализа текстовых документов в R.
 
 
 ### Упражнение 1 — Загрузка и просмотр текстов
@@ -192,8 +170,8 @@ question_radio(
   "Сколько документов входит в наш корпус?",
   answer("1000"),
   answer("3000"),
-  answer("500"),
-  answer("2000", correct = TRUE),
+  answer("2000"),
+  answer("500", correct = TRUE),
   allow_retry = TRUE,
   random_answer_order = T,  
   incorrect = "Посчитайте элементы вектора `texts_ru` или посмотрите на `doc_meta`."
@@ -253,17 +231,6 @@ table(doc_meta$topic_true)
 
 ```{r ex3-check}
 grade_code()
-```
-
-```{r ex3-q}
-question_radio(
-  "Сколько документов в категории «Ценности»?",
-  answer("220", correct = TRUE),
-  answer("361"),
-  answer("622"),
-  random_answer_order = T,
-  allow_retry = TRUE
-)
 ```
 
 ## Предобработка текстов
@@ -431,10 +398,10 @@ grade_this({
 ```{r ex6-q, echo=FALSE}
 question(
   "Сколько токенов с частью речи NOUN (существительные) содержится в аннотированном корпусе `anno_df`?",
-  answer("95 384"),
-  answer("117 651", correct = TRUE),
-  answer("152 008"),
-  answer("210 437"),
+  answer("3491"),
+  answer("29934", correct = TRUE),
+  answer("15330"),
+  answer("2371"),
   allow_retry = TRUE,
   incorrect = "Подсчитайте количество строк, где `upos == \"NOUN\"`, например: `sum(anno_df$upos == \"NOUN\")`."
 )
