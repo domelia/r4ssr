@@ -879,7 +879,13 @@ question_text(
 У Вас должно получиться следующее:
 
 ```{r echo=FALSE, eval=TRUE}
-
+ggbetweenstats(
+  civil_society,
+  x    = place,
+  y    = business,
+  type = "non-parametric",
+  xlab = "Оценка социальной ответственности бизнеса в поселениях разного типа"
+)
 ```
 
 
@@ -902,7 +908,7 @@ ggbetweenstats(
   js,
   x    = ...,
   y    = ...,
-  type = "parametric",
+  type = "non-parametric",
   xlab = "..."
 )
 ```
