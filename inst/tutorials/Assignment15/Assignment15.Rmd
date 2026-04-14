@@ -530,7 +530,6 @@ freq_df <- textstat_frequency(dfm_trim, n = 15)
 ```
 
 ```{r ex9b-solution, include=FALSE}
-freq_df <- textstat_frequency(dfm_trim, n = 15)
 ggplot(freq_df, aes(x = reorder(feature, frequency), y = frequency)) +
   geom_col(fill = "steelblue") +
   coord_flip() +

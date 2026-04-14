@@ -2099,8 +2099,7 @@ learnr:::store_exercise_cache(structure(list(label = "ex9b", global_setup = stru
     setup = NULL, chunks = list(list(label = "ex9b", code = "freq_df <- textstat_frequency(dfm_trim, n = 15)\n# ваш код (используйте ggplot2)", 
         opts = list(label = "\"ex9b\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = structure("grade_code()", chunk_opts = list(
-        label = "ex9b-check")), solution = structure(c("freq_df <- textstat_frequency(dfm_trim, n = 15)", 
-    "ggplot(freq_df, aes(x = reorder(feature, frequency), y = frequency)) +", 
+        label = "ex9b-check")), solution = structure(c("ggplot(freq_df, aes(x = reorder(feature, frequency), y = frequency)) +", 
     "  geom_col(fill = \"steelblue\") +", "  coord_flip() +", 
     "  labs(title = \"Топ-15 лемм в корпусе\", x = \"Лемма\", y = \"Частота\")"
     ), chunk_opts = list(label = "ex9b-solution", include = FALSE)), 
